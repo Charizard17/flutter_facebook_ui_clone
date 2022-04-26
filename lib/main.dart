@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'config/palette.dart';
+import 'screens/screens.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -7,17 +10,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facebook UI Clone',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Palette.scaffold,
       ),
-      home: Center(
-        child: Text('Facebook UI Clone'),
-      ),
+      home: HomeScreen(),
     );
   }
 }
